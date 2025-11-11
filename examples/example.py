@@ -16,6 +16,11 @@ def example():
         print("Environment creation successful")
         observations = env.reset()  # noqa: F841
 
+        print("Action Space", env.action_space)
+        print("Observation Space", env.observation_space)
+
+        exit()
+
         print("Agent acting inside environment.")
         count_steps = 0
         terminal = False
@@ -29,3 +34,23 @@ def example():
 
 if __name__ == "__main__":
     example()
+
+
+"""
+
+Action Space Box(
+    [ -1.  -1.  -1.  -1.  -1.  -1.  -1.  -1. -20. -20.], 
+    [ 1.  1.  1.  1.  1.  1.  1.  1. 20. 20.], 
+    (10,), 
+    float32
+)
+
+Observation Space Dict(
+    head_depth:Box(0.0, 1.0, (256, 256, 1), float32), 
+    is_holding:Box(0.0, 1.0, (1,), float32), 
+    joint:Box(-3.4028235e+38, 3.4028235e+38, (7,), float32), 
+    obj_start_sensor:Box(-3.4028235e+38, 3.4028235e+38, (3,), float32), 
+    relative_resting_position:Box(-3.4028235e+38, 3.4028235e+38, (3,), float32)
+)
+
+"""
